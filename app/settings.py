@@ -126,6 +126,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = "/static/"
 
 LOGIN_REDIRECT_URL = '/dashboard/'
-
+STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.StaticFilesStorage'
+PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 
 django_heroku.settings(locals())
