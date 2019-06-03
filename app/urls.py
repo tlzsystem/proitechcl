@@ -15,7 +15,16 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from django.contrib.auth.decorators import login_required
+from dashboard.views import DahsboardView
+
+from django.contrib.auth.views import LoginView
+
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', LoginView.as_view(redirect_authenticated_user=True), name='login'),
+    path('dashboard/', login_required(DahsboardView.as_view()),name='dashboard-view'),
+    path('accounts/login/', LoginView.as_view(), name='login'),
 ]
