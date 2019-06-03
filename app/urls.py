@@ -17,8 +17,7 @@ from django.contrib import admin
 from django.urls import path
 from django.contrib.auth.decorators import login_required
 from dashboard.views import DahsboardView
-from django.conf.urls.static import static
-from django.conf import settings
+
 
 from django.contrib.auth.views import LoginView
 
@@ -29,4 +28,4 @@ urlpatterns = [
     path('', LoginView.as_view(redirect_authenticated_user=True), name='login'),
     path('dashboard/', login_required(DahsboardView.as_view()),name='dashboard-view'),
     path('accounts/login/', LoginView.as_view(), name='login'),
-]+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+]
