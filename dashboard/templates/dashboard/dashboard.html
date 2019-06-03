@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% load static %}
+{% block pagetitle %}Dashboard{% endblock %}
+{% block title_content %}Dashboard {% endblock %}
+{% block subtitle_content %}Panel de Control {% endblock %}
+{% block nav_container %}Dashboard {% endblock %}
+
+{% block content %}
+
+
+<div class="row">
+        <div class="col-lg-3 col-xs-6">
+          <!-- small box -->
+          <div class="small-box bg-aqua">
+            <div class="inner">
+              <h3>{{ total_cotizaciones }}</h3>
+
+              <p>Cotizaciones</p>
+            </div>
+            <div class="icon">
+              <i class="ion ion-bag"></i>
+            </div>
+            <a href="{% url 'cotizaciones-list' %}" class="small-box-footer">Más info <i class="fa fa-arrow-circle-right"></i></a>
+          </div>
+        </div>
+
+</div>
+
+
+
+{% endblock %}
+
