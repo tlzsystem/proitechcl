@@ -31,4 +31,4 @@ urlpatterns = [
     path('', LoginView.as_view(redirect_authenticated_user=True), name='login'),
     path('dashboard/', login_required(DahsboardView.as_view()),name='dashboard-view'),
     path('accounts/login/', LoginView.as_view(), name='login'),
-]+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+]
